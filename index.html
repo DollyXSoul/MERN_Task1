@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveHTMLinterpreter</title>
+    <script>
+        function interpreted() {
+            h_code = document.getElementById("htmlcode").value;
+            c_code = "<style>" + document.getElementById("CSScode").value + "</style>";
+
+            temp = document.getElementById("d3");
+            temp.innerHTML = h_code + c_code;
+
+        }
+    </script>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #heading {
+            margin: 0px;
+            padding: 0.5%;
+            background-color: #18978F;
+            color: aliceblue;
+        }
+
+        textarea {
+            resize: none;
+            background-color: #E9DAC1;
+            font-size: 15px;
+        }
+
+        #d2 {
+            display: flex;
+        }
+
+        #s1 {
+            display: block;
+            background-color: #54BAB9;
+            color: aliceblue;
+            font-family: cursive;
+            font-size: 1.5em;
+            margin-top: 1px;
+            border: black 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="heading"> LIVE HTML and CSS Interpreter</h2>
+
+    <div id="d2">
+        <textarea rows="18" cols="90" placeholder="Enter html code here...." id="htmlcode"
+            onkeyup="interpreted()"></textarea>
+        <textarea rows="18" cols="90" placeholder="Enter CSS code here...." id="CSScode"
+            onkeyup="interpreted()"></textarea>
+    </div>
+
+    <span id="s1">Interpreter </span>
+    <div id="d3"></div>
+</body>
+
+</html>
